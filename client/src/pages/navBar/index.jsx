@@ -28,6 +28,20 @@ function ResponsiveAppBar() {
     //const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
     const { token, logout, currentUser } = useContext(AuthContext);
+    const [login,setLogin]=useState(token?true:false)
+
+
+    React.useEffect(()=>{
+    if(currentUser)
+       setLogin(true)
+       else{
+        setLogin(false)
+      
+       }
+
+    },[token,currentUser])
+
+
 
     const handleOpenUserMenu = (event) => {
         setAnchorElUser(event.currentTarget);
@@ -92,8 +106,9 @@ function ResponsiveAppBar() {
                     </Box>
                     {console.log(token)}
                     <Box sx={{ flexGrow: 0 }}>
-                        {token ?
+                        {login ?
                             <>
+                        
                                 <Tooltip title="Open settings">
                                     <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                         <Avatar alt="" src="/static/images/avatar/2.jpg" />
@@ -124,6 +139,7 @@ function ResponsiveAppBar() {
                                     </MenuItem>
                                 </Menu> </>
                             : <>
+                               
                                 <Grid container spacing={2}>
                                     <Grid item xs={6}>
                                         <PopupSignIn />

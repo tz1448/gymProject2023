@@ -21,6 +21,8 @@ export const AuthContextProvider = ({ children }) => {
     setToken(res.data.accessToken);
   };
   const logout = () => {
+   
+    window.location.href ='./homePage'
     setCurrentUser(null);
     setToken(null);
   };
