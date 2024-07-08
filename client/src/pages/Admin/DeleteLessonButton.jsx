@@ -43,10 +43,12 @@ export default function DeleteLessonButton(props) {
         console.log('props.LessonType', props.LessonType)
         setLessonName(props.lesson.LessonType);
 
-        const res = await axios.get(`http://localhost:3600/api/secretary/${props.lesson.guiedId}`, config).catch(error => console.error(error));
+        const res = await axios.get(`http://localhost:3600/api/secretary`, config).catch(error => console.error(error));
         if (res.statusText === 'OK')
-            setGuiedName(res.data)
-
+            {
+                const guied=res.data.filter(x=>x.gmail==props.lesson.guiedId)[0]
+                setGuiedName(guied.firstName+" "+guied.lastName)
+            }
     }
 
     useEffect(() => {

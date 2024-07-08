@@ -10,7 +10,7 @@ import Picture from './uplouding';
 
 const steps = ['The first step to fitness', 'The second step to fitness', 'we almost there'];
 
-export default function Signup() {
+export default function Signup(props) {
     const [activeStep, setActiveStep] = React.useState(0);
     const [skipped, setSkipped] = React.useState(new Set());
     const [firstName, setFirstName] = useState('');
@@ -72,11 +72,15 @@ export default function Signup() {
     };
 
     const handleReset = () => {
+        
         setActiveStep(0);
     };
-
+    const handleClose = () => {
+        props.setOpen(false)
+        
+    };
     return (
-        <Box sx={{ width: '100%', backgroundColor: 'white', color: 'red' }}>
+        <Box   sx={{ width: '100%', backgroundColor: 'white', color: 'red' }}>
             <Stepper activeStep={activeStep}>
                 {steps.map((label, index) => {
                     const stepProps = {};
@@ -99,6 +103,7 @@ export default function Signup() {
                     <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2, color: 'red' }}>
                         <Box sx={{ flex: '1 1 auto', color: 'red' }} />
                         <Button onClick={handleReset}>Reset</Button>
+                        <Button onClick={handleClose}>Close</Button>
                     </Box>
                 </React.Fragment>
             ) : (

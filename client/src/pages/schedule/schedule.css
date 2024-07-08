@@ -4,7 +4,15 @@
      margin: 20vh, 10pc, 10pc, 10pc;
      height: 50pc;
      width: 50pc;
+     /* background: orange; */
      /* max-width: 800px; */
+ }
+ .a{
+    position: relative;  
+    /* background: rgba(255, 0, 51, 0.21);  */
+    top: 170px;        
+    left: 80px;
+
  }
 
  table {
@@ -113,10 +121,6 @@
          margin-left: 30%;
          margin-right: 30%;
      }
- }
-
- ::ng-deep .css-wjh20t-MuiPagination-ul {
-    padding-top: 80% !important;
  }
 
  

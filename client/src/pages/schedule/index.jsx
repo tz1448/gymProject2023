@@ -12,14 +12,18 @@ export default function PaginationControlled() {
   };
 
   return (
-    <>
-      <br />
+    
+     <> <br />
       <div className="schedule-container" style={{ width: '50%', height: '50%' }}>
         <Schedule page={page}></Schedule>
       </div>
-      <Stack className="pagination-container" spacing={1} style={{ width: '60%', height: '0%', marginBottom: '0%' }}>
+     <br></br><br></br><br></br>
+      
+     <div className="a" >
+      <Stack  className="pagination-container" spacing={1} style={{ width: '60%', height: '60%',  marginBottom: '5%' }}>
         <Pagination count={3} page={page} onChange={handleChange} />
       </Stack>
+      </div>
     </>
   );
 }

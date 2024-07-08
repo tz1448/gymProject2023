@@ -1,5 +1,5 @@
 import WeeklySchedule from './WeeklySchedule';
-import img from '../../../src/images/adminBackground3.png';
+import img from '../../../src/images/weeklySchedule.jpg';
 import { width } from '@mui/system';
 const Secretary = () => {
 

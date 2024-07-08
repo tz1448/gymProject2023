@@ -27,7 +27,7 @@ const Schedule = (props) => {
     }
 
     return (
-        (<div className="schedule" style={{ width: '30%', height: '300px' }}>
+        (<div className="schedule" style={{ width: '10%', height: '200px' }}>
             {/* <RecommendationsPopup /> */}
             {currentStep === 1 && <h2>Lessons</h2>}
             {currentStep === 1 &&

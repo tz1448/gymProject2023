@@ -14,9 +14,8 @@ const MyComponent = () => {
     }, []);
 
     const loadData = async () => {
-        const day = "1";
-        const time = "10:00:00";
-        // const time= new Date().getTime();
+        const day = new Date().getDay()+1+"";
+        const time=new Date().getHours()+":00:00";
         try {
             const response = await axios.post("http://localhost:3600/api/schedules/", {
                 day,

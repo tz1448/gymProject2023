@@ -39,7 +39,7 @@ const PopupSignUp = () => {
           <Typography id="keep-mounted-modal-description" sx={{ mt: 0 }}>
             <div className="main">
               <input type="checkbox" id="chk" aria-hidden="true"></input>
-              <Signup></Signup>
+              <Signup setOpen={setOpen}></Signup>
             </div>
           </Typography>
         </Box>
